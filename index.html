@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Resim Analiz - Ücretsiz Görsel Analizi</title>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🤖 AI Resim Analiz Sistemi</h1>
-            <p>Resminizi yükleyin, yapay zeka analiz etsin!</p>
+            <p>API anahtarı gerektirmez - Tamamen ücretsiz!</p>
         </header>
 
         <div class="upload-section">
@@ -21,7 +22,7 @@
                     <path d="M5 15V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
                 <p class="upload-text">Resim yüklemek için tıklayın veya sürükleyin</p>
-                <p class="upload-hint">PNG, JPG, WEBP (Max: 5MB)</p>
+                <p class="upload-hint">PNG, JPG, WEBP (Max: 10MB)</p>
                 <input type="file" id="fileInput" accept="image/*" hidden>
             </div>
         </div>
@@ -36,27 +37,34 @@
             <button id="newImageBtn" class="new-image-btn">Yeni Resim Yükle</button>
         </div>
 
+        <div id="loadingSection" class="loading-section" style="display: none;">
+            <div class="loading-content">
+                <div class="big-spinner"></div>
+                <p>AI modeli yükleniyor... İlk kullanımda biraz sürebilir.</p>
+            </div>
+        </div>
+
         <div id="resultsSection" class="results-section" style="display: none;">
             <h2>📊 Analiz Sonuçları</h2>
             
             <div class="result-card">
-                <h3>🏷️ Tespit Edilen Nesneler</h3>
+                <h3>🏷️ Tespit Edilen Nesneler (Top 5)</h3>
                 <div id="objectResults" class="result-content"></div>
             </div>
 
             <div class="result-card">
-                <h3>🎨 Sahne Analizi</h3>
-                <div id="sceneResults" class="result-content"></div>
+                <h3>🎨 Detaylı Analiz</h3>
+                <div id="detailResults" class="result-content"></div>
             </div>
 
             <div class="result-card">
-                <h3>💡 YouTube Kapak Resmi Analizi</h3>
-                <div id="youtubeResults" class="result-content"></div>
+                <h3>💡 YouTube ve Sosyal Medya Analizi</h3>
+                <div id="socialResults" class="result-content"></div>
             </div>
 
             <div class="result-card">
-                <h3>✨ Genel Öneriler</h3>
-                <div id="suggestions" class="result-content"></div>
+                <h3>🏡 Emlak Sektörü İçin Öneriler</h3>
+                <div id="realEstateResults" class="result-content"></div>
             </div>
         </div>
 
@@ -64,7 +72,7 @@
     </div>
 
     <footer>
-        <p>💻 Yapay Zeka destekli ücretsiz resim analizi | Plaza Emlak dijital çözümler</p>
+        <p>💻 ML5.js ile yapay zeka destekli analiz | Plaza Emlak dijital çözümler</p>
     </footer>
 
     <script src="script.js"></script>
