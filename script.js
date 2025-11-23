@@ -100,7 +100,7 @@ analyzeBtn.addEventListener('click', async () => {
         
         // API çağrısı
         const response = await fetch(
-            "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large",
+              "https://api-inference.huggingface.co/models/nlpconnect/vit-gpt2-image-captioning",
             {
                 headers: {
                     Authorization: `Bearer ${API_KEY}`,
@@ -258,3 +258,4 @@ function showError(message) {
     }, 5000);
 
 }
+
