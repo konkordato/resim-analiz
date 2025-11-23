@@ -1,5 +1,5 @@
 // ⚠️ ÖNEMLİ: Aşağıdaki YOUR_API_KEY yazan yeri Hugging Face token'ınız ile değiştirin!
-const API_KEY = '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'; // hf_xxxxx şeklindeki token'ınızı buraya yapıştırın
+const API_KEY = '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'; // hf_xxxxx şeklindeki token'ınızı buraya yapıştırın
 
 // DOM elementleri
 const uploadBox = document.getElementById('uploadBox');
@@ -256,4 +256,5 @@ function showError(message) {
     setTimeout(() => {
         errorMessage.style.display = 'none';
     }, 5000);
+
 }
