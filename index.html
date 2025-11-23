@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resim Analiz - Ücretsiz Görsel Analizi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Resim Analiz Sistemi</h1>
+            <p>Resminizi yükleyin, yapay zeka analiz etsin!</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 5L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M5 15V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="upload-text">Resim yüklemek için tıklayın veya sürükleyin</p>
+                <p class="upload-hint">PNG, JPG, WEBP (Max: 5MB)</p>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+        </div>
+
+        <div id="previewSection" class="preview-section" style="display: none;">
+            <h2>Yüklenen Resim:</h2>
+            <img id="previewImage" alt="Preview">
+            <button id="analyzeBtn" class="analyze-btn">
+                <span class="btn-text">Resmi Analiz Et</span>
+                <div class="spinner" style="display: none;"></div>
+            </button>
+            <button id="newImageBtn" class="new-image-btn">Yeni Resim Yükle</button>
+        </div>
+
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <h2>📊 Analiz Sonuçları</h2>
+            
+            <div class="result-card">
+                <h3>🏷️ Tespit Edilen Nesneler</h3>
+                <div id="objectResults" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>🎨 Sahne Analizi</h3>
+                <div id="sceneResults" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>💡 YouTube Kapak Resmi Analizi</h3>
+                <div id="youtubeResults" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>✨ Genel Öneriler</h3>
+                <div id="suggestions" class="result-content"></div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+    </div>
+
+    <footer>
+        <p>💻 Yapay Zeka destekli ücretsiz resim analizi | Plaza Emlak dijital çözümler</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
